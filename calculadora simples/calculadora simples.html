@@ -5,7 +5,31 @@
         function calcular() {
             const p1 = document.getElementById("parcela1").value;
             const p2 = document.getElementById("parcela2").value;
-            document.getElementById("resultado").innerHTML = Number(p1)+Number(p2);
+            const op = document.getElementById("operacao")
+            
+  const num1 = Number(document.getElementById("numero1").value);
+  const num2 = Number(document.getElementById("numero2").value);
+  const operacao = document.getElementById("operacao").value;
+
+  let resultado;
+
+  switch (operacao) {
+    case "soma":
+      resultado = number(p1) + number(p2);
+      break;
+    case "subtração":
+      resultado = number(p1) - number(p2);
+      break;
+    case "multiplicação":
+      resultado = number(p1) * number(p2);
+      break;
+    case "divisão":
+      resultado = number(p1) / number(p2);
+      break;
+    default:
+      resultado = "Operação inválida";
+  }
+  document.getElementById("produto").innerHTML = resultado
 }
     </script>
   </head>
@@ -21,7 +45,7 @@
 </select>
 
     <button id="calc" onclick="calcular()">Clique para realizar a conta</button>
-    <div id="resultado">O resultado aparecerá aqui</div>
+    <div id="produto">O resultado aparecerá aqui</div>
     <h1>Título</h1>
     <p>Parágrafo.</p>
   </body>
