@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Lista de tarefas</title>
+    <script>
+        function AddTarefa() {
+          const valor = document.getElementById("meuInput").value;
+          if (valor.trim() !== "") {
+      const resultadoDiv = document.getElementById("resultado"); 
+      const itemDiv = document.createElement("div");
+      const textoSpan = document.createElement("span");
+      textoSpan.textContent = valor + " ";
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Remover";
+      deleteBtn.onclick = function () {
+        resultadoDiv.removeChild(itemDiv);
+      };
+      itemDiv.appendChild(textoSpan);
+      itemDiv.appendChild(deleteBtn);
+      resultadoDiv.appendChild(itemDiv);
+    }
+    document.getElementById("meuInput").value = ""; //limpa a caixa de texto
+  }
+
+  function ResetarLista() {
+    document.getElementById("resultado").innerHTML = ""; //nulifica o resultado
+  }
+        
+      </script>      
+  </head>
+  <body>
+    <h2>Adicione uma tarefa</h2>
+    <input id="meuInput" type="text" placeholder="digite tarefa" onkeydown="if (event.key === 'Enter') AddTarefa()">
+    <button id="botaodocliente" onclick="AddTarefa()">Adicionar à lista</button>
+    <button id="botaoreset" onclick="ResetarLista()">Apagar tudo</button>
+    <h1>Lista de tarefas:</h1>
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+  </body>
+</html>
