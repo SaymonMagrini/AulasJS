@@ -3,20 +3,38 @@
     <title>Lista de tarefas</title>
     <script>
         function AddTarefa() {
-          const valor = document.getElementById("meuInput").value;
-          if (valor.trim() !== "") {
-      const resultadoDiv = document.getElementById("resultado"); 
-      const itemDiv = document.createElement("div");
-      const textoSpan = document.createElement("span");
-      textoSpan.textContent = valor + " ";
-      const deleteBtn = document.createElement("button");
-      deleteBtn.textContent = "Remover";
-      deleteBtn.onclick = function () {
-        resultadoDiv.removeChild(itemDiv);
-      };
-      itemDiv.appendChild(textoSpan);
-      itemDiv.appendChild(deleteBtn);
-      resultadoDiv.appendChild(itemDiv);
+    const valor = document.getElementById("meuInput").value;
+    if (valor.trim() !== "") {
+        const resultadoDiv = document.getElementById("resultado");
+        
+        // Ensure there's an <ul> element for the list
+        let ul = document.getElementById("tarefaList");
+        if (!ul) {
+            ul = document.createElement("ul");
+            ul.id = "tarefaList"; // Set the ID for future reference
+            resultadoDiv.appendChild(ul);
+        }
+
+        // Create the <li> element for the new task
+        const li = document.createElement("li");
+        
+        // Create the span to display the task text
+        const textoSpan = document.createElement("span");
+        textoSpan.textContent = valor + " ";
+        
+        // Create the delete button
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Remover";
+        deleteBtn.onclick = function () {
+            ul.removeChild(li); // Remove the task from the list
+        };
+
+        // Append the text and button to the <li> item
+        li.appendChild(textoSpan);
+        li.appendChild(deleteBtn);
+
+        // Append the <li> to the <ul>
+        ul.appendChild(li);
     }
     document.getElementById("meuInput").value = ""; //limpa a caixa de texto
   }
@@ -33,6 +51,6 @@
     <button id="botaodocliente" onclick="AddTarefa()">Adicionar à lista</button>
     <button id="botaoreset" onclick="ResetarLista()">Apagar tudo</button>
     <h1>Lista de tarefas:</h1>
-    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+    <div id="resultado" style="margin-top: 20px;"></div>
   </body>
 </html>
