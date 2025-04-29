@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>Saudações</title>
+    <script>
+function Saudar() {
+  const agora = new Date();
+  const hora = agora.getHours(); // 0 - 23
+  let saudacao = "";
+  switch (true) {
+    case (hora >= 6 && hora < 12):
+      saudacao = "Bom dia";
+      break;
+    case (hora >= 12 && hora < 18):
+      saudacao = "Boa tarde";
+      break;
+    default:
+      saudacao = "Boa noite";
+      break;
+  } 
+//condicional pelo prompt: create a js switch that returns a string, in the case of time being 6am - noon  "Bom dia"; noon - 6pm "Boa tarde" otherwise "Boa noite"
+// posteriormente editada com auxilio dos prompts "the result of this will be in which variable?"; "the result of this will be in which variable?"
+  var NomeDoUsuario = document.getElementById('NomeInserido').value
+  document.getElementById("Saudacoes").innerHTML = saudacao + ", " + String(NomeDoUsuario); //Concatena tudo na div
+}
+    </script>
+</head>
+<body>
+    <h1>Insira seu nome abaixo:</h1>
+    <input type="text" id="NomeInserido" placeholder="Insira seu nome aqui">
+    <button id="BotaoSaudacao" onclick="Saudar()">Saudar</button>
+    <div id="Saudacoes"></div>
+</body>
+</html>
