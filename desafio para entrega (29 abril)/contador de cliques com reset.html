@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Lista de tarefas</title>
+    <script>
+  function Resetar() {
+    document.getElementById("CliquesTotais").innerHTML = ""; //Reseta os cliques
+    }
+    function Clicar() { 
+    let div = document.getElementById("CliquesTotais");
+    let ValorAtual = Number(div.innerText, 10);
+    div.innerText = ValorAtual + 1; // Incrementa e atualiza
+    } //gerada pelo prompt: Create a function named "Clicar" that changes a <div> element (id="CliquesTotais") to it's current value +1 
+      </script>      
+  </head>
+  <body>
+    <h2>Clique no botão se tem coragem</h2>
+    <button id="BotaoClicado" onclick="Clicar()">Atreva-se a clicar</button>
+    <button id="BotaoReset" onclick="Resetar()">Resetar cliques</button>
+    <h1>Total de cliques:</h1>
+    <div id="CliquesTotais" style="margin-top: 20px; font-weight: bold;"></div>
+  </body>
+</html>
