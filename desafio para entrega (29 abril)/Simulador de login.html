@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>pagina de Login</title>
+    <script>
+        function log_in() {
+            let user = document.getElementById("Usuário").value
+            let password = document.getElementById("Senha").value
+            if (user === "Pedro Pedreiro Pereira"){
+                if (password==="#SENHAdoPedro123"){
+                    document.getElementById("Login").innerHTML = "Login feito com sucesso"
+                } else {document.getElementById("Login").innerHTML = "Falha no login, senha incorreta"}
+            } else {document.getElementById("Login").innerHTML = "Falha no login, usuário e/ou senha incorreto(s)"}
+            }
+    </script>
+</head>
+<body>
+    <h3>Insira o nome de usuário</h3>
+    <input type="text" id="Usuário" placeholder='Ex: "meu_usuário"'>
+    <h3>Insira a senha</h3>
+    <input type="password" id="Senha">
+    <button id="BotaoLogin" onclick="log_in()">Logar</button>
+    <h2>Resultado de login:</h2>
+    <div id="Login"></div>
+</body>
+</html>
+<!-- esta em específico foi feita majoritariamente examinando, copiando e colando de atividades anteriores -->
