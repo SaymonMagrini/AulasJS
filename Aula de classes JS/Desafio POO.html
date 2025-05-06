@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Produto {
+            constructor(nome, preco, quantidade){
+            this.nome = nome;
+            this.preco = preco;
+            this.quantidade = quantidade;
+        }
+        EstoqueTotal(){
+            console.log("O estoque total de " + this.nome + " é igual à: " + this.preco*this.quantidade)
+        } 
+        }
+        const p1 = new Produto('Banana', 2, 50);
+        p1.EstoqueTotal();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
